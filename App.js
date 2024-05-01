@@ -1,16 +1,13 @@
-import { StatusBar } from "expo-status-bar";
-import {
-  StyleSheet,
-  Text,
- 
-  TouchableWithoutFeedback,
-  View,
-} from "react-native";
+import React from 'react';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet,View } from "react-native";
 import FormHeader from "./app/components/FormHeader";
+import FormSelectorBtn from './app/components/FormSelectorBtn';
 
 export default function App() {
   return (
     <View style={{ flex: 1, paddingTop: 120, paddingLeft: 12 }}>
+      <StatusBar style="auto" />  {/* Add this line for status bar control */}
       <View style={{ height: 100 }}>
         <FormHeader
           leftHeading="Welcome"
@@ -18,20 +15,9 @@ export default function App() {
           subHeading="Flash Ludo Game"
         />
       </View>
-      <View>
-        <TouchableWithoutFeedback>
-          <View
-            style={{
-              height: 45,
-              width: "50%",
-              backgroundColor: "#1b1b33",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Text style={{ color: "white", fontSize:16 }}>Login</Text>
-          </View>
-        </TouchableWithoutFeedback>
+      <View style={{ flexDirection: 'row', padding: 20 }}>
+        <FormSelectorBtn backgroundColor='rgb(255, 0, 0)' title="Login" />
+        <FormSelectorBtn backgroundColor='rgb(255, 140, 0)' title="Signup" />
       </View>
     </View>
   );
