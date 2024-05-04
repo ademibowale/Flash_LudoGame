@@ -108,7 +108,7 @@ const styles = {
     flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#FF0000',
     paddingHorizontal: 20,
   },
   title: {

@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity,Image } from 'react-native';
 const WelcomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Image source={require('../images/Screens.png')} style={styles.backgroundImage} />
+      <Image source={require('../images/Screenss.png')} style={styles.backgroundImage} />
       <Text style={styles.title}>Welcome to Ludo Game</Text>
       <TouchableOpacity
         style={styles.button}
@@ -39,8 +39,9 @@ const styles = {
   },
 
   title: {
-    fontSize: 24,
+    fontSize: 30,
     marginBottom: 30,
+    
   },
   button: {
     backgroundColor: '#007AFF',
