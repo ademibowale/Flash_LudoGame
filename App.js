@@ -1,47 +1,23 @@
-import { StatusBar } from "expo-status-bar";
-import {
-  StyleSheet,
-  Text,
- 
-  TouchableWithoutFeedback,
-  View,
-} from "react-native";
-import FormHeader from "./app/components/FormHeader";
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import WelcomeScreen from './app/screen/WelcomeScreen';
+import SignInScreen from './app/screen/SignInScreen';
+import SignUpScreen from './app/screen/SignUpScreen';
 
-export default function App() {
+
+const Stack = createStackNavigator();
+
+const App = () => {
   return (
-    <View style={{ flex: 1, paddingTop: 120, paddingLeft: 12 }}>
-      <View style={{ height: 100 }}>
-        <FormHeader
-          leftHeading="Welcome"
-          rightHeading="Back"
-          subHeading="Flash Ludo Game"
-        />
-      </View>
-      <View>
-        <TouchableWithoutFeedback>
-          <View
-            style={{
-              height: 45,
-              width: "50%",
-              backgroundColor: "#1b1b33",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Text style={{ color: "white", fontSize:16 }}>Login</Text>
-          </View>
-        </TouchableWithoutFeedback>
-      </View>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Welcome" component={WelcomeScreen} />
+        <Stack.Screen name="SignIn" component={SignInScreen} />
+        <Stack.Screen name="SignUp" component={SignUpScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+export default App;
